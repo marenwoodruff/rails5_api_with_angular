@@ -1,5 +1,5 @@
-class Doctor < ApplicationRecord
+class Patient < ApplicationRecord
     has_many :appointments, dependent: :destroy
-    has_many :patients, through: :appointments
+    has_many :doctors, through: :appointments
     validates :name, presence: true, uniqueness: true
 end
