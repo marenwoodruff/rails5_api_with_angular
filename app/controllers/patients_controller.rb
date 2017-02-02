@@ -12,6 +12,11 @@ class PatientsController < ApplicationController
     render json: patient
   end
 
+  def get_appointments
+    patient_appointments = Patient.find(params[:id]).appointments
+    render json: patient_appointments
+  end
+
   # POST /patients
   def create
     patient = Patient.new(patient_params)
